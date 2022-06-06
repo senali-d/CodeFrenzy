@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import { useTheme } from 'next-themes'
+import { FaBookReader } from 'react-icons/fa'
+import { MdComputer } from 'react-icons/md'
+import { AiOutlineShareAlt } from 'react-icons/ai'
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -18,7 +22,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      {/* <button onClick={switchTheme}>Change theme</button> */}
+      <Head>
+        <title>codechallenge</title>
+      </Head>
+      <button onClick={switchTheme}>Change theme</button>
       <main className="px-4 mx-auto max-w-[1080px]">
         <div className="md:text-left h-[calc(100vh-60px)] flex justify-center flex-row">
           <div className="flex flex-col justify-center">
@@ -38,6 +45,42 @@ const Home: NextPage = () => {
           </div>
           <div className="md:flex hidden my-auto w-[30%] md:w-[50%]">
             <img src="/banner.png" alt="Banner" />
+          </div>
+        </div>
+
+        <div className="pb-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+              <div className="relative">
+                <dt className="flex flex-col items-center md:items-start">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">            
+                    <FaBookReader size={20} />
+                  </div>
+                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">Learn</p>
+                </dt>
+                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">Coding is a valuable skill to learn. Experts say it takes 10,000 hours to master a new skill so why not start today.</dd>
+              </div>
+
+              <div className="relative">
+                <dt className="flex flex-col items-center md:items-start">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
+                    <MdComputer size={22} />
+                  </div>
+                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">Practice</p>
+                </dt>
+                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">Learning a new skill is not easy. It takes a lot of practice and the only way you'll improve is by constantly building.</dd>
+              </div>
+
+              <div className="relative">
+                <dt className="flex flex-col items-center md:items-start">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
+                    <AiOutlineShareAlt size={22} />
+                  </div>
+                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">Share</p>
+                </dt>
+                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">After completing the challenge, you can share your work with the world and get feedback from the community members</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </main>
