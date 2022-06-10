@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Header />
-      <Component {...pageProps} />
+      <div className="min-h-[calc(100vh-225px)]">
+        <Component {...pageProps} />
+      </div>
       <Footer />
     </ThemeProvider>
   )
