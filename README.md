@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## codechallenge
 
-## Getting Started
+codechallenge is a platform for improve coding skills for developers. codechallenge provide real-world challenges and mini projects. You can easily participate for those challenges.
+
+Not only that. You can also share your solution with the community though codechallenge under solutions section. The best part is that the experts will review your project and provide feedback.
+
+![codechallenge](https://user-images.githubusercontent.com/52546856/173200946-75804b35-72d0-46fd-8763-050fcd9c3bb2.png)
 
 First, run the development server:
 
