@@ -7,13 +7,11 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <div className="flex flex-col">
-        <Header />
-        <div className="min-h-[calc(100vh-225px)]">
-          <Component {...pageProps} />
-        </div>
-        <Footer />
+      <Header />
+      <div className="min-h-[calc(100vh-225px)] pt-16">
+        <Component {...pageProps} />
       </div>
+      <Footer />
     </ThemeProvider>
   )
 }
