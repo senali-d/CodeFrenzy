@@ -25,8 +25,8 @@ const Home: NextPage = () => {
       <Head>
         <title>codechallenge</title>
       </Head>
-      <button onClick={switchTheme}>Change theme</button>
       <main className="px-4 mx-auto max-w-[1080px]">
+        <button onClick={switchTheme}>Change theme</button>
         <div className="md:text-left h-[calc(100vh-60px)] flex justify-center flex-row">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
               </div>
               <div className="mt-3 sm:mt-0 md:mt-3 lg:mt-0 sm:ml-3 md:ml-0 lg:ml-3">
                 <a
-                  href="#"
+                  href="/challenges"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
                 >
                   View Challenges
