@@ -2,7 +2,7 @@ import { AiOutlineTwitter, AiFillGithub} from 'react-icons/ai'
 
 const Footer = () => {
   return (
-    <footer className="mx-auto max-w-[1080px] p-4 sm:p-6 sm:px-4 bg-white dark:bg-gray-800">
+    <footer className="mx-auto max-w-[1080px] w-full p-4 sm:p-6 sm:px-4 bg-white dark:bg-gray-800">
       <div className="sm:flex sm:items-center sm:justify-between">
         <a href="/" className="flex items-center mb-4 sm:mb-0">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">codechallenge</span>
