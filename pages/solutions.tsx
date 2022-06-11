@@ -11,7 +11,7 @@ const Solutions = () => {
         <h1 className="text-4xl font-medium title-font mb-4 text-gray-900 dark:text-white">
           Solutions
         </h1>
-        <p className="text-gray-500 sm:text-md md:text-lg mb-5">Here is the solutions from community. </p>
+        <p className="text-gray-500 sm:text-md md:text-lg mb-5">Here is the solutions from community.</p>
       </div>
       <div className="flex flex-row flex-wrap container pb-12 mx-auto gap-y-6 gap-4">
         {[1,2,3,4,5,6].map((i) => (
