@@ -1,4 +1,5 @@
 export interface IChallenge {
+  _id: string
   title: string
   desc: string
   img: string

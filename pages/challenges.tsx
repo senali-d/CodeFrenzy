@@ -14,7 +14,7 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
       <Head>
         <title>codechallenge - challenges</title>
       </Head>
-      <main className="px-4 md:px-0 mx-auto max-w-[1080px]">
+      <main className="mx-auto max-w-[1080px]">
         <div className="flex flex-col w-full py-6">
           <h1 className="text-4xl font-medium title-font mb-4 text-gray-900 dark:text-white">
             Challenges
@@ -24,15 +24,15 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
             challenges
           </p>
         </div>
-        <div className="flex flex-row flex-wrap container pb-12 mx-auto gap-y-6 gap-4">
+        <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
           {challenges.map((challenge: IChallenge) => (
             <a
               key={challenge.title}
               href="#"
-              className="flex flex-col items-center bg-white rounded-lg border shadow-md sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 lg:w-[calc(50%-8px)]"
+              className="flex flex-col items-center bg-white rounded-lg border shadow-md sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 w-[100%] xs:w-[48%] sm:w-full lg:w-[calc(50%-8px)]"
             >
               <img
-                className="object-cover w-full h-auto max-h-64 sm:max-h-[190px] rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg"
+                className="object-cover w-full h-auto max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
                 src={challenge.img}
                 alt=""
               />
@@ -40,9 +40,9 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {challenge.title}
                 </h5>
-                <div className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer w-fit capitalize">
+                {/* <div className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer w-fit capitalize">
                   {challenge.level}
-                </div>
+                </div> */}
                 {/* <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer w-fit capitalize">
                   Intermediate
                 </span>
