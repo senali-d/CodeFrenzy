@@ -25,7 +25,7 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
             challenges
           </p>
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
+        <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full pb-6">
           {challenges.map((challenge: IChallenge) => (
             <div
               key={challenge._id}

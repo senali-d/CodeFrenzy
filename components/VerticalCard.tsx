@@ -12,7 +12,7 @@ const VerticalCard: NextPage<Props> = ({ image, title, level, desc}) => {
   return (
     <>
       <img
-        className="object-cover w-full h-auto max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
+        className="object-cover w-full h-full max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
         src={image}
         alt=""
       />

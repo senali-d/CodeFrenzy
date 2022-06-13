@@ -119,7 +119,7 @@ const Home: NextPage<Props> = ({ challenges }) => {
             </div>
           </dl>
         </div>
-        flex flex-row flex-wrap justify-between gap-y-6 w-full py-6
+        
         <div className="py-12 md:py-24">
           <div className="flex flex-col text-center w-full mb-5 md:mb-10">
             <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
