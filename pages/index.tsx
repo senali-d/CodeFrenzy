@@ -11,19 +11,19 @@ import { IChallenge } from '../types/challenge.interface'
 
 type Props = {
   challenges: IChallenge[]
-}
+};
 
-const Home: NextPage<Props> = ({challenges}) => {
-  const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+const Home: NextPage<Props> = ({ challenges }) => {
+  const { theme, setTheme } = useTheme()
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+  }, [])
 
   const switchTheme = () => {
     if (isMounted) {
-      setTheme(theme === "light" ? "dark" : "light");
+      setTheme(theme === "light" ? "dark" : "light")
     }
   }
 
@@ -47,10 +47,10 @@ const Home: NextPage<Props> = ({challenges}) => {
               and improve your skills.
             </p>
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
-              <div className="rounded-md shadow">
+              <div>
                 <a
                   href="#"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
+                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
                 >
                   Sign up with Github
                 </a>
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({challenges}) => {
               <div className="mt-3 sm:mt-0 md:mt-3 lg:mt-0 sm:ml-3 md:ml-0 lg:ml-3">
                 <a
                   href="/challenges"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
+                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
                 >
                   View Challenges
                 </a>
@@ -70,73 +70,74 @@ const Home: NextPage<Props> = ({challenges}) => {
           </div>
         </div>
 
-        <div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
-              <div className="relative">
-                <dt className="flex flex-col items-center md:items-start">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
-                    <FaBookReader size={20} />
-                  </div>
-                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
-                    Learn
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
-                  Coding is a valuable skill to learn. Experts say it takes
-                  10,000 hours to master a new skill so why not start today.
-                </dd>
-              </div>
+        <div className="max-w-7xl mx-auto">
+          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+            <div className="relative">
+              <dt className="flex flex-col items-center md:items-start">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
+                  <FaBookReader size={20} />
+                </div>
+                <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
+                  Learn
+                </p>
+              </dt>
+              <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
+                Coding is a valuable skill to learn. Experts say it takes 10,000
+                hours to master a new skill so why not start today.
+              </dd>
+            </div>
 
-              <div className="relative">
-                <dt className="flex flex-col items-center md:items-start">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
-                    <MdComputer size={22} />
-                  </div>
-                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
-                    Practice
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
-                  Learning a new skill is not easy. It takes a lot of practice
-                  and the only way you'll improve is by constantly building.
-                </dd>
-              </div>
+            <div className="relative">
+              <dt className="flex flex-col items-center md:items-start">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
+                  <MdComputer size={22} />
+                </div>
+                <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
+                  Practice
+                </p>
+              </dt>
+              <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
+                Learning a new skill is not easy. It takes a lot of practice and
+                the only way you'll improve is by constantly building.
+              </dd>
+            </div>
 
-              <div className="relative">
-                <dt className="flex flex-col items-center md:items-start">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
-                    <AiOutlineShareAlt size={22} />
-                  </div>
-                  <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
-                    Share
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
-                  After completing the challenge, you can share your work with
-                  the world and get feedback from the community members
-                </dd>
-              </div>
-            </dl>
-          </div>
+            <div className="relative">
+              <dt className="flex flex-col items-center md:items-start">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b1b845] text-white">
+                  <AiOutlineShareAlt size={22} />
+                </div>
+                <p className="pt-5 text-lg leading-6 font-medium text-gray-900 dark:text-white">
+                  Share
+                </p>
+              </dt>
+              <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
+                After completing the challenge, you can share your work with the
+                world and get feedback from the community members
+              </dd>
+            </div>
+          </dl>
         </div>
-
+        flex flex-row flex-wrap justify-between gap-y-6 w-full py-6
         <div className="py-12 md:py-24">
           <div className="flex flex-col text-center w-full mb-5 md:mb-10">
             <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
               Latest Challenges
             </h1>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
             {challenges.map((challenge: IChallenge) => (
-              <div className="py-4 lg:w-[calc(25%-1rem)] md:w-1/2">
+              <div
+                className="py-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
+                key={challenge._id}
+              >
                 <div className="h-full flex flex-col items-center">
                   <img
                     alt="team"
-                    className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                    className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
                     src={challenge.img}
                   />
-                  <div className="w-full">
+                  <div className="w-full px-5">
                     <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
                       {challenge.title}
                     </h2>
@@ -149,9 +150,7 @@ const Home: NextPage<Props> = ({challenges}) => {
                     <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
                       Advanced
                     </span> */}
-                    <p className="my-4 dark:text-gray-400">
-                      {challenge.desc}
-                    </p>
+                    <p className="my-4 dark:text-gray-400">{challenge.desc}</p>
                   </div>
                 </div>
               </div>
@@ -170,7 +169,7 @@ export async function getServerSideProps() {
     await mongoose.connect(process.env.MONGO_URI as string)
   }
 
-  const challenges = await Challenge.find().sort({$natural:-1}).limit(4)
+  const challenges = await Challenge.find().sort({ $natural: -1 }).limit(4)
   return {
     props: { challenges: JSON.parse(JSON.stringify(challenges)) },
   }
