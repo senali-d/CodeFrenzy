@@ -4,12 +4,12 @@ const ChallengesSchema = new mongoose.Schema({
   title: {type: String, required: true},
   desc: {type: String, required: true},
   img: {type: String, required: true},
-  level: {type: String},
-  type: {type: String},
-  requirements: {type: String},
-  outcomes: {type: String},
-  resources: {type: String},
-  links: {type: String},
+  level: {type: String, required: true},
+  type: {type: String, required: true},
+  requirements: [{type: String, required: true}],
+  outcomes: [{type: String, default: ''}],
+  resources: [{type: String, default: ''}],
+  links: [{type: String, default: ''}],
 }, {timestamps: true});
 
 mongoose.models = {}

@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react'
+import mongoose from 'mongoose'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useTheme } from 'next-themes'
 import { FaBookReader } from 'react-icons/fa'
 import { MdComputer } from 'react-icons/md'
 import { AiOutlineShareAlt } from 'react-icons/ai'
+import Challenge from '../models/Challenges'
+import { IChallenge } from '../types/challenge.interface'
 
-const Home: NextPage = () => {
+type Props = {
+  challenges: IChallenge[]
+}
+
+const Home: NextPage<Props> = ({challenges}) => {
   const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -25,7 +32,7 @@ const Home: NextPage = () => {
       <Head>
         <title>codechallenge</title>
       </Head>
-      <main className="px-4 mx-auto max-w-[1080px]">
+      <main className="px-4 md:px-0 mx-auto max-w-[1080px]">
         <button onClick={switchTheme}>Change theme</button>
         <div className="md:text-left h-[calc(100vh-60px)] flex justify-center flex-row">
           <div className="flex flex-col justify-center">
@@ -114,121 +121,41 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="container px-5 py-12 md:py-24 mx-auto">
+        <div className="py-12 md:py-24">
           <div className="flex flex-col text-center w-full mb-5 md:mb-10">
             <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
               Latest Challenges
             </h1>
           </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 lg:w-1/4 md:w-1/2">
-              <div className="h-full flex flex-col items-center">
-                <img
-                  alt="team"
-                  className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                  src="https://dummyimage.com/200x200"
-                />
-                <div className="w-full">
-                  <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
-                    Alper Kamu
-                  </h2>
-                  <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Beginner
-                  </span>
-                  <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Intermediate
-                  </span>
-                  <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Advanced
-                  </span>
-                  <p className="my-4 dark:text-gray-400">
-                    DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                    pack vaporware.
-                  </p>
+          <div className="flex flex-wrap gap-4">
+            {challenges.map((challenge: IChallenge) => (
+              <div className="py-4 lg:w-[calc(25%-1rem)] md:w-1/2">
+                <div className="h-full flex flex-col items-center">
+                  <img
+                    alt="team"
+                    className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                    src={challenge.img}
+                  />
+                  <div className="w-full">
+                    <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
+                      {challenge.title}
+                    </h2>
+                    <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
+                      {challenge.level}
+                    </span>
+                    {/* <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
+                      Intermediate
+                    </span>
+                    <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
+                      Advanced
+                    </span> */}
+                    <p className="my-4 dark:text-gray-400">
+                      {challenge.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="p-4 lg:w-1/4 md:w-1/2">
-              <div className="h-full flex flex-col items-center">
-                <img
-                  alt="team"
-                  className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                  src="https://dummyimage.com/200x200"
-                />
-                <div className="w-full">
-                  <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
-                    Alper Kamu
-                  </h2>
-                  <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Beginner
-                  </span>
-                  <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Intermediate
-                  </span>
-                  <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Advanced
-                  </span>
-                  <p className="my-4 dark:text-gray-400">
-                    DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                    pack vaporware.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="p-4 lg:w-1/4 md:w-1/2">
-              <div className="h-full flex flex-col items-center">
-                <img
-                  alt="team"
-                  className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                  src="https://dummyimage.com/200x200"
-                />
-                <div className="w-full">
-                  <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
-                    Alper Kamu
-                  </h2>
-                  <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Beginner
-                  </span>
-                  <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Intermediate
-                  </span>
-                  <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Advanced
-                  </span>
-                  <p className="my-4 dark:text-gray-400">
-                    DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                    pack vaporware.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="p-4 lg:w-1/4 md:w-1/2">
-              <div className="h-full flex flex-col items-center">
-                <img
-                  alt="team"
-                  className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                  src="https://dummyimage.com/200x200"
-                />
-                <div className="w-full">
-                  <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
-                    Alper Kamu
-                  </h2>
-                  <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Beginner
-                  </span>
-                  <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Intermediate
-                  </span>
-                  <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                    Advanced
-                  </span>
-                  <p className="my-4 dark:text-gray-400">
-                    DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                    pack vaporware.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </main>
@@ -236,4 +163,15 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Home
+
+export async function getServerSideProps() {
+  if (!mongoose.connections[0].readyState) {
+    await mongoose.connect(process.env.MONGO_URI as string)
+  }
+
+  const challenges = await Challenge.find().sort({$natural:-1}).limit(4)
+  return {
+    props: { challenges: JSON.parse(JSON.stringify(challenges)) },
+  }
+}
