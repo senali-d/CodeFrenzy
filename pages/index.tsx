@@ -8,6 +8,7 @@ import { MdComputer } from 'react-icons/md'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import Challenge from '../models/Challenges'
 import { IChallenge } from '../types/challenge.interface'
+import HorizontalCard from '../components/HorizontalCard'
 
 type Props = {
   challenges: IChallenge[]
@@ -128,31 +129,15 @@ const Home: NextPage<Props> = ({ challenges }) => {
           <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
             {challenges.map((challenge: IChallenge) => (
               <div
-                className="py-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
+                className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
                 key={challenge._id}
               >
-                <div className="h-full flex flex-col items-center">
-                  <img
-                    alt="team"
-                    className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
-                    src={challenge.img}
-                  />
-                  <div className="w-full px-5">
-                    <h2 className="title-font font-medium text-lg text-gray-900 dark:text-white">
-                      {challenge.title}
-                    </h2>
-                    <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                      {challenge.level}
-                    </span>
-                    {/* <span className="text-white mb-3 bg-[#b6853c] hover:bg-[#86622c] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                      Intermediate
-                    </span>
-                    <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#8a3925] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer">
-                      Advanced
-                    </span> */}
-                    <p className="my-4 dark:text-gray-400">{challenge.desc}</p>
-                  </div>
-                </div>
+                <HorizontalCard
+                  image={challenge.img}
+                  title={challenge.title}
+                  level={challenge.level}
+                  desc={challenge.desc}
+                />
               </div>
             ))}
           </div>
