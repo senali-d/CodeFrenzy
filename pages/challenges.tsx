@@ -30,7 +30,7 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
           {challenges.map((challenge: IChallenge) => (
             <div
               key={challenge._id}
-              className="flex flex-col items-center bg-white rounded-lg border shadow-md sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 w-[100%] xs:w-[48%] sm:w-full lg:w-[calc(50%-8px)]"
+              className="flex flex-col items-center bg-white rounded-lg border shadow-md sm:flex-row hover:bg-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 w-[100%] xs:w-[48%] sm:w-full lg:w-[calc(50%-8px)]"
             >
               <Link href={`/challenge/${challenge._id}`}>
                 <a className="flex flex-col sm:flex-row">

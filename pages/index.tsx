@@ -130,7 +130,7 @@ const Home: NextPage<Props> = ({ challenges }) => {
           <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
             {challenges.map((challenge: IChallenge) => (
               <div
-                className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
+                className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] border shadow-md rounded-lg bg-white hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
                 key={challenge._id}
               >
                 <Link href={`/challenge/${challenge._id}`}>

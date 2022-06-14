@@ -5,7 +5,7 @@ const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
   return (
-    <nav className="fixed z-10 w-full mx-auto bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
+    <nav className="fixed z-10 w-full mx-auto bg-indigo-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
       <div className="max-w-[1080px] container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center flex-1">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">codechallenge</span>
