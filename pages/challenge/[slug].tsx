@@ -1,47 +1,15 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import mongoose from "mongoose";
-import Challenge from "../../models/Challenges";
-import { IChallenge } from "../../types/challenge.interface";
-import { CLevel } from "../../constant/enums";
+import { NextPage } from 'next'
+import Head from 'next/head'
+import mongoose from 'mongoose'
+import Challenge from '../../models/Challenges'
+import { IChallenge } from '../../types/challenge.interface'
+import Badge from '../../components/Badge'
 
 type Props = {
-  challenge: IChallenge;
-};
+  challenge: IChallenge
+}
 
 const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
-  const levelBadge = () => {
-    switch (challenge.level) {
-      case CLevel.BEGINER:
-        return (
-          <span className="text-white mb-3 bg-[#b1b845] hover:bg-[#969c3b] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer capitalize">
-            {CLevel.BEGINER}
-          </span>
-        );
-        break;
-      case CLevel.INTERMEDIATE:
-        return (
-          <span className="text-white mb-3 bg-[#51d1f8] hover:bg-[#3da3c2] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer capitalize">
-            {CLevel.INTERMEDIATE}
-          </span>
-        );
-        break;
-      case CLevel.ADVANCED:
-        return (
-          <span className="text-white mb-3 bg-[#d1411d] hover:bg-[#942e14] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer capitalize">
-            {CLevel.ADVANCED}
-          </span>
-        );
-        break;
-      default:
-        return (
-          <span className="text-white mb-3 bg-[#692b79] hover:bg-[#4a1757] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer capitalize">
-            {challenge.level}
-          </span>
-        );
-        break;
-    }
-  };
   return (
     <>
       <Head>
@@ -84,7 +52,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                       {"Raclette knausgaard hella meggs normcore williamsbu"}
                     </p>
                     <div className="flex">
-                      {challenge.level && levelBadge()}
+                      <Badge level={challenge.level} />
                       <span className="text-white mb-3 bg-[#692b79] hover:bg-[#4a1757] py-1 px-2 text-xs rounded-md mr-1 cursor-pointer capitalize">
                         {challenge.type}
                       </span>
@@ -138,18 +106,18 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default ChallengeDetail;
+export default ChallengeDetail
 
 export async function getServerSideProps(context: { query: { slug: string } }) {
   if (!mongoose.connections[0].readyState) {
-    await mongoose.connect(process.env.MONGO_URI as string);
+    await mongoose.connect(process.env.MONGO_URI as string)
   }
 
-  const challenge = await Challenge.findOne({ _id: context.query.slug });
+  const challenge = await Challenge.findOne({ _id: context.query.slug })
   return {
     props: { challenge: JSON.parse(JSON.stringify(challenge)) },
-  };
+  }
 }
