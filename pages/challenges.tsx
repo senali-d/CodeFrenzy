@@ -14,7 +14,7 @@ const Challenges: NextPage<Props>  = ({ challenges }) => {
   return (
     <>
       <Head>
-        <title>codechallenge - challenges</title>
+        <title>Challenges - codechallenge</title>
       </Head>
       <main className="mx-auto max-w-[1080px]">
         <div className="flex flex-col w-full py-6">
