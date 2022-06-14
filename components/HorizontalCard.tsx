@@ -48,7 +48,7 @@ const HorizontalCard: NextPage<Props> = ({ image, title, level, desc}) => {
   return (
     <div className="h-full flex flex-col items-center">
       <img
-        alt="team"
+        alt={title}
         className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
         src={image}
       />

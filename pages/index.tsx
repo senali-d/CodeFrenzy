@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import mongoose from 'mongoose'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { FaBookReader } from 'react-icons/fa'
 import { MdComputer } from 'react-icons/md'
@@ -132,12 +133,16 @@ const Home: NextPage<Props> = ({ challenges }) => {
                 className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
                 key={challenge._id}
               >
-                <HorizontalCard
-                  image={challenge.img}
-                  title={challenge.title}
-                  level={challenge.level}
-                  desc={challenge.desc}
-                />
+                <Link href={`/challenge/${challenge._id}`}>
+                  <a>
+                    <HorizontalCard
+                      image={challenge.img}
+                      title={challenge.title}
+                      level={challenge.level}
+                      desc={challenge.desc}
+                    />
+                  </a>
+                </Link>
               </div>
             ))}
           </div>

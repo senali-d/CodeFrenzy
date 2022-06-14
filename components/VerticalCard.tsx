@@ -47,16 +47,16 @@ const VerticalCard: NextPage<Props> = ({ image, title, level, desc}) => {
   return (
     <>
       <img
-        className="object-cover w-full h-full max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
+        className="object-cover w-full h-auto max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
         src={image}
-        alt=""
+        alt={title}
       />
       <div className="flex flex-col justify-between p-4 leading-normal">
         <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
           {title}
         </h5>
         {level && levelBadge()}
-        <p className="mb-3 text-sm text-gray-700 dark:text-gray-400">
+        <p className="text-sm text-gray-700 dark:text-gray-400">
           {desc}
         </p>
       </div>
