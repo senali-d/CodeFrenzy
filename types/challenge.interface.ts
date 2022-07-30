@@ -8,5 +8,5 @@ export interface IChallenge {
   requirements: string[]
   outcomes: string[]
   resources : string[]
-  links: string[]
+  attachment: string
 }

@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import VerticalCard from '../components/VerticalCard'
 
+
 const Solutions = () => {
   return (
     <>
     <Head>
-      <title>codechallenge - Solutions</title>
+      <title>Solutions - codechallenge</title>
     </Head>
     <main className="mx-auto max-w-[1080px]">
       <div className="flex flex-col w-full py-6">

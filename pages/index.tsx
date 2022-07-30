@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import mongoose from 'mongoose'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { FaBookReader } from 'react-icons/fa'
 import { MdComputer } from 'react-icons/md'
@@ -49,20 +50,18 @@ const Home: NextPage<Props> = ({ challenges }) => {
             </p>
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
               <div>
-                <a
-                  href="#"
-                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
-                >
-                  Sign up with Github
-                </a>
+                <Link href="/">
+                  <a
+                    className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
+                  >Sign up with Github</a>
+                </Link>
               </div>
               <div className="mt-3 sm:mt-0 md:mt-3 lg:mt-0 sm:ml-3 md:ml-0 lg:ml-3">
-                <a
-                  href="/challenges"
-                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
-                >
-                  View Challenges
-                </a>
+                <Link href="/challenges">
+                  <a
+                    className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
+                  >View Challenges</a>
+                </Link>
               </div>
             </div>
           </div>
@@ -129,15 +128,19 @@ const Home: NextPage<Props> = ({ challenges }) => {
           <div className="flex flex-row flex-wrap justify-between gap-y-6 w-full py-6">
             {challenges.map((challenge: IChallenge) => (
               <div
-                className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] shadow rounded-lg"
+                className="pb-4 lg:w-[calc(25%-1rem)] xs:w-[calc(50%-0.5rem)] border shadow-md rounded-lg bg-white hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
                 key={challenge._id}
               >
-                <HorizontalCard
-                  image={challenge.img}
-                  title={challenge.title}
-                  level={challenge.level}
-                  desc={challenge.desc}
-                />
+                <Link href={`/challenge/${challenge._id}`}>
+                  <a>
+                    <HorizontalCard
+                      image={challenge.img}
+                      title={challenge.title}
+                      level={challenge.level}
+                      desc={challenge.desc}
+                    />
+                  </a>
+                </Link>
               </div>
             ))}
           </div>
