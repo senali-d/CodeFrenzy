@@ -50,20 +50,18 @@ const Home: NextPage<Props> = ({ challenges }) => {
             </p>
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
               <div>
-                <a
-                  href="#"
-                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
-                >
-                  Sign up with Github
-                </a>
+                <Link href="/">
+                  <a
+                    className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b1b845] hover:bg-[#969c3b] md:py-2 lg:py-4 md:text-lg md:px-10"
+                  >Sign up with Github</a>
+                </Link>
               </div>
               <div className="mt-3 sm:mt-0 md:mt-3 lg:mt-0 sm:ml-3 md:ml-0 lg:ml-3">
-                <a
-                  href="/challenges"
-                  className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
-                >
-                  View Challenges
-                </a>
+                <Link href="/challenges">
+                  <a
+                    className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b1b845] bg-indigo-100 hover:bg-indigo-200 md:py-2 lg:py-4 md:text-lg md:px-10 "
+                  >View Challenges</a>
+                </Link>
               </div>
             </div>
           </div>

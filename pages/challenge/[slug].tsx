@@ -20,11 +20,11 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
           <h1 className="text-4xl font-medium title-font mb-4 text-gray-900 dark:text-white">
             {challenge.title}
           </h1>
-          <p className="text-gray-500 sm:text-md md:text-lg mb-5">
+          <p className="text-gray-500 sm:text-md md:text-lg mb-5 dark:text-gray-300">
             {challenge.desc}
           </p>
         </div>
-        <div className="text-gray-600 body-font">
+        <div className="text-gray-600 body-font dark:text-gray-300">
           <div className="container mx-auto flex flex-col">
             <div className="flex lg:flex-row">
               <div className="lg:w-4/6 flex-1 h-full overflow-hidden">
@@ -89,15 +89,15 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                 </ul>
                 {challenge.img && (
                   <>
-                    <p className="leading-relaxed text-md mt-4 mb-1">
+                    <p className="leading-relaxed text-md mt-4 mb-4">
                       Download the resources and start
                     </p>
-                    <button
-                      type="button"
+                    <a
+                      href={challenge.attachment}
                       className="text-white bg-[#b1b845] hover:bg-[#969c3b] focus:ring-4 focus:outline-none focus:ring-transparent font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                     >
                       Download
-                    </button>
+                    </a>
                   </>
                 )}
               </div>

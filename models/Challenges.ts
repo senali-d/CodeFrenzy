@@ -9,7 +9,7 @@ const ChallengesSchema = new mongoose.Schema({
   requirements: [{type: String, required: true}],
   outcomes: [{type: String, default: ''}],
   resources: [{type: String, default: ''}],
-  links: [{type: String, default: ''}],
+  attachment: {type: String, default: ''},
 }, {timestamps: true});
 
 mongoose.models = {}
