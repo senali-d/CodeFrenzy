@@ -22,7 +22,7 @@ const Solutions = () => {
             className="flex flex-col items-center bg-white rounded-lg border shadow-md sm:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 w-[100%] xs:w-[48%] sm:w-full lg:w-[calc(50%-8px)]"
           >
             <VerticalCard
-              image={'https://dummyimage.com/200x200'}
+              image={'https://res.cloudinary.com/zencloude/image/upload/v1655196411/codechallenge/login_xntb63.png'}
               title={'Title'}
               level={i.toString()}
               desc={'Description'}

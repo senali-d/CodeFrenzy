@@ -30,6 +30,8 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
             <div className="flex lg:flex-row">
               <div className="lg:w-4/6 flex-1 h-full overflow-hidden">
                 <Image
+                  width="800px"
+                  height="500px"
                   alt={challenge.title}
                   className="object-cover object-center h-full w-full"
                   src={challenge.img}
@@ -39,6 +41,8 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                 <div className="text-center sm:pr-8 sm:pb-8 lg:pl-8">
                   <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-200">
                     <Image
+                      width="100px"
+                      height="100px"
                       alt={challenge.title}
                       className="object-cover object-center h-full w-full rounded-full"
                       src={challenge.img}

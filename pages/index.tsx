@@ -67,7 +67,7 @@ const Home: NextPage<Props> = ({ challenges }) => {
             </div>
           </div>
           <div className="md:flex hidden my-auto w-[30%] md:w-[50%]">
-            <Image src="/banner.png" alt="Banner" />
+            <Image src="/banner.png" alt="Banner" width="500px" height="300px" />
           </div>
         </div>
 
