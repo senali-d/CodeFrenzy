@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Challenge from '../../models/Challenges'
 import dbConnection from '../../util/database'
-import catchAsyncError from '../../middleware/catchAsyncError'
+const catchAsyncError = require('../../middleware/catchAsyncError')
 
 /** Create Challenge */
 const createChallenge = catchAsyncError(async(req: NextApiRequest, res: NextApiResponse) => {

@@ -10,6 +10,7 @@ import { AiOutlineShareAlt } from 'react-icons/ai'
 import Challenge from '../models/Challenges'
 import { IChallenge } from '../types/challenge.interface'
 import HorizontalCard from '../components/HorizontalCard'
+import Image from 'next/image'
 
 type Props = {
   challenges: IChallenge[]
@@ -66,7 +67,7 @@ const Home: NextPage<Props> = ({ challenges }) => {
             </div>
           </div>
           <div className="md:flex hidden my-auto w-[30%] md:w-[50%]">
-            <img src="/banner.png" alt="Banner" />
+            <Image src="/banner.png" alt="Banner" />
           </div>
         </div>
 
@@ -98,7 +99,7 @@ const Home: NextPage<Props> = ({ challenges }) => {
               </dt>
               <dd className="mt-2 text-base text-gray-500 text-center md:text-left">
                 Learning a new skill is not easy. It takes a lot of practice and
-                the only way you'll improve is by constantly building.
+                the only way you will improve is by constantly building.
               </dd>
             </div>
 

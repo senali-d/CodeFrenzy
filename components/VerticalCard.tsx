@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import Badge from './Badge'
+import Image from 'next/image'
 
 type Props = {
   image: string,
@@ -13,7 +14,7 @@ const VerticalCard: NextPage<Props> = ({ image, title, level, desc}) => {
   
   return (
     <>
-      <img
+      <Image
         className="object-cover w-full h-auto max-h-64 sm:max-h-[190px] rounded-t-lg sm:w-48 md:rounded-none md:rounded-l-lg"
         src={image}
         alt={title}

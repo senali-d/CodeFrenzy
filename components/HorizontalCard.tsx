@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { NextPage } from 'next'
 import Badge from './Badge'
+import Image from 'next/image'
 
 type Props = {
   image: string,
@@ -13,7 +14,7 @@ const HorizontalCard: NextPage<Props> = ({ image, title, level, desc}) => {
 
   return (
     <div className="h-full flex flex-col items-center">
-      <img
+      <Image
         alt={title}
         className="flex-shrink-0 rounded-lg w-full object-cover object-center mb-4"
         src={image}

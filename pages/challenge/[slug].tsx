@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import Challenge from '../../models/Challenges'
 import { IChallenge } from '../../types/challenge.interface'
 import Badge from '../../components/Badge'
+import Image from 'next/image'
 
 type Props = {
   challenge: IChallenge
@@ -28,7 +29,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
           <div className="container mx-auto flex flex-col">
             <div className="flex lg:flex-row">
               <div className="lg:w-4/6 flex-1 h-full overflow-hidden">
-                <img
+                <Image
                   alt={challenge.title}
                   className="object-cover object-center h-full w-full"
                   src={challenge.img}
@@ -37,7 +38,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
               <div className="lg:w-2/6 flex flex-0 items-center bg-[#318127]">
                 <div className="text-center sm:pr-8 sm:pb-8 lg:pl-8">
                   <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-200">
-                    <img
+                    <Image
                       alt={challenge.title}
                       className="object-cover object-center h-full w-full rounded-full"
                       src={challenge.img}
@@ -66,7 +67,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                 <p className="leading-relaxed text-lg mb-4">Requirements:</p>
                 <ul className="list-disc mb-8 ml-7">
                   {challenge.requirements.map((requirement) => (
-                    <li className="mb-2">{requirement}</li>
+                    <li className="mb-2" key={requirement}>{requirement}</li>
                   ))}
                 </ul>
                 {challenge.resources && challenge.resources.length > 1 && (
@@ -74,7 +75,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                 )}
                 <ul className="list-disc mb-8 ml-7">
                   {challenge.resources.map((resource) => (
-                    <li className="mb-2">{resource}</li>
+                    <li className="mb-2" key={resource}>{resource}</li>
                   ))}
                 </ul>
               </div>
@@ -84,7 +85,7 @@ const ChallengeDetail: NextPage<Props> = ({ challenge }) => {
                 )}
                 <ul className="list-disc ml-7">
                   {challenge.outcomes.map((outcome) => (
-                    <li className="mb-2">{outcome}</li>
+                    <li className="mb-2" key={outcome}>{outcome}</li>
                   ))}
                 </ul>
                 {challenge.img && (
