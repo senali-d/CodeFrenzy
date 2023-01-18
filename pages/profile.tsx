@@ -24,10 +24,10 @@ const Profile = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 md:col-span-2 md:mt-0">
+              <div className="mt-5 md:col-span-2 md:mt-0 rounded-[5px] border-[1px] bg-white dark:bg-gray-700 dark:border-gray-700">
                 <form action="#" method="POST">
                   <div className="shadow sm:overflow-hidden sm:rounded-md">
-                    <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
+                    <div className="space-y-6 px-4 py-5 sm:p-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700">
                           Photo
@@ -52,12 +52,12 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-white px-4 py-5 sm:p-6">
+                  <div className="px-4 py-5 sm:p-6">
                     <div className="grid grid-cols-6 gap-6">
                       <div className="col-span-6 sm:col-span-3">
                         <label
                           htmlFor="first-name"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                         >
                           First name
                         </label>
@@ -65,14 +65,14 @@ const Profile = () => {
                           type="text"
                           name="first-name"
                           id="first-name"
-                          className="mt-1 block w-full rounded-md bg-slate-200 p-3 border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm"
+                          className="mt-1 block w-full rounded-md bg-slate-200 p-3 border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm dark:bg-slate-800"
                         />
                       </div>
 
                       <div className="col-span-6 sm:col-span-3">
                         <label
                           htmlFor="last-name"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                         >
                           Last name
                         </label>
@@ -80,14 +80,14 @@ const Profile = () => {
                           type="text"
                           name="last-name"
                           id="last-name"
-                          className="mt-1 block w-full rounded-md p-3 bg-slate-200  border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm"
+                          className="mt-1 block w-full rounded-md p-3 bg-slate-200  border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm dark:bg-slate-800"
                         />
                       </div>
 
                       <div className="col-span-6 sm:col-span-4">
                         <label
                           htmlFor="github-handle"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                         >
                           Github handle
                         </label>
@@ -95,21 +95,21 @@ const Profile = () => {
                           type="text"
                           name="github-handle"
                           id="github-handle"
-                          className="mt-1 block w-full rounded-md bg-slate-200 p-3 border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm"
+                          className="mt-1 block w-full rounded-md bg-slate-200 p-3 border-gray-300 shadow-sm focus:border-[#b1b845] focus:ring-[#b1b845] sm:text-sm dark:bg-slate-800"
                         />
                       </div>
 
                       <div className="col-span-6 sm:col-span-3">
                         <label
                           htmlFor="country"
-                          className="block text-sm font-medium text-gray-700"
+                          className="block text-sm font-medium text-gray-700 dark:text-gray-100"
                         >
                           Country
                         </label>
                         <select
                           id="country"
                           name="country"
-                          className="mt-1 block w-full rounded-md border border-gray-300 bg-white p-3 shadow-sm focus:border-[#b1b845] focus:outline-none focus:ring-[#b1b845] sm:text-sm"
+                          className="mt-1 block w-full rounded-md border border-gray-300 bg-white p-3 shadow-sm focus:border-[#b1b845] focus:outline-none focus:ring-[#b1b845] sm:text-sm dark:bg-slate-800"
                         >
                           <option>United States</option>
                           <option>Canada</option>
