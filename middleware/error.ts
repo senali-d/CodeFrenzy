@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import ErrorHandler from '../util/errorhander'
+import { ErrorHandler } from '../util/errorhander'
 
 module.exports = (err: ErrorHandler, req: NextApiRequest, res: NextApiResponse, next: any) => {
   err.statusCode = err.status || 500
