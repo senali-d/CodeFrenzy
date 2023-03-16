@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import mongoose from 'mongoose'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
+// import { useTheme } from 'next-themes'
 import { FaBookReader } from 'react-icons/fa'
 import { MdComputer } from 'react-icons/md'
 import { AiOutlineShareAlt } from 'react-icons/ai'
@@ -17,36 +17,35 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ challenges }) => {
-  const { theme, setTheme } = useTheme()
-  const [isMounted, setIsMounted] = useState(false)
+  // const { theme, setTheme } = useTheme()
+  // const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, [])
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, [])
 
-  const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === "light" ? "dark" : "light")
-    }
-  }
+  // const switchTheme = () => {
+  //   if (isMounted) {
+  //     setTheme(theme === "light" ? "dark" : "light")
+  //   }
+  // }
 
   return (
     <>
       <Head>
-        <title>codechallenge</title>
+        <title>CodeFrenzy</title>
       </Head>
       <main className="px-4 md:px-0 mx-auto max-w-[1080px]">
-        <button onClick={switchTheme}>Change theme</button>
         <div className="md:text-left h-[calc(100vh-60px)] flex justify-center flex-row">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
               <span className="block xl:inline">Welcome to </span>
               <span className="block text-[#b1b845] xl:inline">
-                codechallenge
+                CodeFrenzy
               </span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              codechallenge is a open source platform to build projects to learn
+              CodeFrenzy is a open source platform to build projects to learn
               and improve your skills.
             </p>
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">

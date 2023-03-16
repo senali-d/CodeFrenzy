@@ -1,10 +1,10 @@
-## codechallenge
+## CodeFrenzy
 
-codechallenge is a platform for improve coding skills for developers. codechallenge provide real-world challenges and mini projects. You can easily participate for those challenges.
+CodeFrenzy is a platform for improve coding skills for developers. CodeFrenzy provide real-world challenges and mini projects. You can easily participate for those challenges.
 
-Not only that. You can also share your solution with the community though codechallenge under solutions section. The best part is that the experts will review your project and provide feedback.
+Not only that. You can also share your solution with the community though CodeFrenzy under solutions section. The best part is that the experts will review your project and provide feedback.
 
-![codechallenge](https://user-images.githubusercontent.com/52546856/173200946-75804b35-72d0-46fd-8763-050fcd9c3bb2.png)
+![CodeFrenzy](https://user-images.githubusercontent.com/52546856/173200946-75804b35-72d0-46fd-8763-050fcd9c3bb2.png)
 
 First, run the development server:
 

@@ -4,7 +4,7 @@ const Profile = () => {
   return (
     <>
       <Head>
-        <title>Profile - codechallenge</title>
+        <title>Profile - CodeFrenzy</title>
       </Head>
       <main className="mx-auto max-w-[1080px]">
         <div className="flex flex-col w-full py-6">
